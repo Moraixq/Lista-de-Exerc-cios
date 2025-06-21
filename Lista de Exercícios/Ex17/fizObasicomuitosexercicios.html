@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios de Matemática</title>
+</head>
+<body>
+
+    <h1>Exercícios de Matemática</h1>
+
+    <form id="quiz">
+
+        <p>1) Quanto é 5 + 3?</p>
+        <input type="radio" name="q1" value="6">6<br>
+        <input type="radio" name="q1" value="8">8<br>
+        <input type="radio" name="q1" value="10">10<br>
+
+        <p>2) Quanto é 7 x 2?</p>
+        <input type="radio" name="q2" value="14">14<br>
+        <input type="radio" name="q2" value="12">12<br>
+        <input type="radio" name="q2" value="16">16<br><br>
+
+        <button type="button" onclick="verificar()">Verificar Respostas</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificar() {
+            let acertos = 0;
+
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+
+            if (q1 && q1.value === "8") acertos++;
+            if (q2 && q2.value === "14") acertos++;
+
+            document.getElementById("resultado").innerText = "Você acertou " + acertos + " de 2 questões.";
+        }
+    </script>
+
+</body>
+</html>

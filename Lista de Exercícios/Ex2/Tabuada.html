@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1 align="center">Tabuada</h1>
+
+    <script type="text/javascript">
+        function tabuada() {
+            var number = parseInt(window.prompt('Digite um número:', ''));
+
+            if (isNaN(number)) {
+                document.write("Por favor, digite um número válido.");
+                return;
+            }
+
+            document.write("<h2>Tabuada do " + number + ":</h2>");
+
+            for (var x = 0; x <= 10; x++) {
+                var y = number * x;
+                document.write(number + " x " + x + " = " + y + "<br>");
+            }
+        }
+
+        tabuada();
+    </script>
+    
+</body>
+</html>

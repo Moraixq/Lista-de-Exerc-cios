@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cronômetro</title>
+</head>
+<body>
+
+    <h1 id="display">0</h1>
+
+    <button onclick="iniciar()">Iniciar</button>
+    <button onclick="pausar()">Pausar</button>
+    <button onclick="zerar()">Zerar</button>
+
+    <script>
+        let contador = 0;
+        let intervalo = null;
+
+        function iniciar() {
+            if (intervalo === null) {
+                intervalo = setInterval(function() {
+                    contador++;
+                    document.getElementById("display").innerText = contador;
+                }, 1000);
+            }
+        }
+
+        function pausar() {
+            clearInterval(intervalo);
+            intervalo = null;
+        }
+
+        function zerar() {
+            clearInterval(intervalo);
+            intervalo = null;
+            contador = 0;
+            document.getElementById("display").innerText = contador;
+        }
+    </script>
+
+</body>
+</html>

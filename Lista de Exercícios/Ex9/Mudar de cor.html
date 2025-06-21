@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar de cor hehe</title>
+    <style>
+      body {
+        background-color: rgb(202, 194, 172);
+        transition: background-color 0.5s ease;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+    </head>
+    <body>
+      <button onclick="mudarCor()">Não aperte!</button>
+    
+      <script>
+        function mudarCor() {
+          const body = document.body;
+          const cores = ['lightgreen', 'lightcoral', 'lightgoldenrodyellow', 'lightskyblue'];
+          const corAtual = body.style.backgroundColor;
+          let proximaCorIndex = cores.indexOf(corAtual) + 1;
+    
+          if (proximaCorIndex === cores.length) {
+            proximaCorIndex = 0;
+          }
+    
+          body.style.backgroundColor = cores[proximaCorIndex];
+        }
+      </script>
+    </body>
+    </html>

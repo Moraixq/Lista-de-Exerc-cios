@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>HAHAHAHAHAHHEHEHEH</title>
+</head>
+<body>
+  <p id="textoHover">Prova é melhor!</p>
+
+  <script>
+    const texto = document.getElementById('textoHover');
+    const textoOriginal = texto.textContent;
+
+    texto.addEventListener('mouseover', () => {
+      texto.textContent = 'Não, exercícios são melhores!';
+    });
+
+    texto.addEventListener('mouseout', () => {
+      texto.textContent = textoOriginal;
+    });
+  </script>
+</body>
+</html>

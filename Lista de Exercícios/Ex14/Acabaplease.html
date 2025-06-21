@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Boas-vindas</title>
+</head>
+<body>
+
+    <label for="nome">Digite seu nome:</label>
+    <input type="text" id="nome">
+    <button onclick="saudacao()">Enviar</button>
+
+    <script>
+        function saudacao() {
+            const nome = document.getElementById("nome").value;
+            alert("Olá " + nome + ". Seja bem-vindo(a)");
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta Simples</title>
+</head>
+<body>
+
+    <h1>Pergunta:</h1>
+    <p>Qual é a capital do Brasil?</p>
+
+    <form id="quizForm">
+        <input type="radio" name="resposta" value="São Paulo" id="op1">
+        <label for="op1">São Paulo</label><br>
+
+        <input type="radio" name="resposta" value="Rio de Janeiro" id="op2">
+        <label for="op2">Rio de Janeiro</label><br>
+
+        <input type="radio" name="resposta" value="Brasília" id="op3">
+        <label for="op3">Brasília</label><br>
+
+        <input type="radio" name="resposta" value="Salvador" id="op4">
+        <label for="op4">Salvador</label><br><br>
+
+        <button type="button" onclick="verificarResposta()">Verificar Resposta</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function verificarResposta() {
+            const opcoes = document.getElementsByName("resposta");
+            let respostaSelecionada = "";
+
+            for (let i = 0; i < opcoes.length; i++) {
+                if (opcoes[i].checked) {
+                    respostaSelecionada = opcoes[i].value;
+                    break;
+                }
+            }
+
+            if (respostaSelecionada === "") {
+                document.getElementById("resultado").innerText = "Por favor, selecione uma opção.";
+                return;
+            }
+
+            if (respostaSelecionada === "Brasília") {
+                document.getElementById("resultado").innerText = "Correto! A capital do Brasil é Brasília.";
+            } else {
+                document.getElementById("resultado").innerText = "Incorreto. A resposta certa é Brasília.";
+            }
+        }
+    </script>
+
+</body>
+</html>

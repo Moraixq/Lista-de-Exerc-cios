@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Contador de Cliques</title>
+</head>
+<body>
+
+    <button id="btnContador">Clique aqui</button>
+    <p>Quantidade de cliques: <span id="contador">0</span></p>
+
+    <script>
+        let cliques = 0;
+
+        const botao = document.getElementById("btnContador");
+
+        botao.addEventListener("click", function() {
+            cliques++;
+            document.getElementById("contador").innerText = cliques;
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contador</title>
+</head>
+<body>
+  <h1>-1 +1</h1>
+  <div id="display">0</div>
+  <button id="decrement">-</button>
+  <button id="increment">+</button>
+
+  <script>
+    let count = 0;
+    const display = document.getElementById("display");
+    const incrementButton = document.getElementById("increment");
+    const decrementButton = document.getElementById("decrement");
+
+    function updateDisplay() {
+      display.textContent = count;
+    }
+
+    incrementButton.addEventListener("click", function() {
+      count++;
+      updateDisplay();
+    });
+
+    decrementButton.addEventListener("click", function() {
+      count--;
+      updateDisplay();
+    });
+
+    updateDisplay();
+  </script>
+</body>
+</html>

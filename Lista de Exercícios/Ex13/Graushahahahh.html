@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      .container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #60e5fc;
+        text-align: center;
+      }
+      input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 15px;
+        background-color: #3b54a7;
+        color: rgb(255, 255, 255);
+        border: none;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+      #resultado {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+    </style>
+    </head>
+    <body>
+    
+    <div class="container">
+      <h2>Conversor de Temperatura</h2>
+      <input type="number" id="temperatura" placeholder="Digite a temperatura">
+      <button onclick="converterCelsius()">Converter para °C</button>
+      <button onclick="converterFahrenheit()">Converter para °F</button>
+      <p id="resultado"></p>
+    </div>
+    
+    <script>
+      function converterCelsius() {
+        const temperatura = parseFloat(document.getElementById("temperatura").value);
+        if (!isNaN(temperatura)) {
+          const fahrenheit = (temperatura * 9/5) + 32;
+          document.getElementById("resultado").textContent = `${temperatura}°C é igual a ${fahrenheit.toFixed(2)}°F`;
+        } else {
+          document.getElementById("resultado").textContent = "Por favor, insira um valor numérico válido.";
+        }
+      }
+    
+      function converterFahrenheit() {
+        const temperatura = parseFloat(document.getElementById("temperatura").value);
+        if (!isNaN(temperatura)) {
+          const celsius = (temperatura - 32) * 5/9;
+          document.getElementById("resultado").textContent = `${temperatura}°F é igual a ${celsius.toFixed(2)}°C`;
+        } else {
+          document.getElementById("resultado").textContent = "Por favor, insira um valor numérico válido.";
+        }
+      }
+    </script>
+    
+    </body>
+    </html>

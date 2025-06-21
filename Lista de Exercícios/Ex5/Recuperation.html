@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+
+  <h2>Calcular Média</h2>
+
+  Nota 1: <input type="number" id="nota1"><br><br>
+  Nota 2: <input type="number" id="nota2"><br><br>
+  Nota 3: <input type="number" id="nota3"><br><br>
+
+  <button onclick="calcular()">Ver Resultado</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      const n1 = parseFloat(document.getElementById("nota1").value);
+      const n2 = parseFloat(document.getElementById("nota2").value);
+      const n3 = parseFloat(document.getElementById("nota3").value);
+
+      if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+        document.getElementById("resultado").innerText = "Digite todas as notas!";
+        return;
+      }
+
+      const media = (n1 + n2 + n3) / 3;
+      const status = media >= 6 ? "Aprovado" : "Reprovado";
+
+      document.getElementById("resultado").innerText = `Média: ${media.toFixed(2)} - ${status}`;
+    }
+  </script>
+
+</body>
+</html>

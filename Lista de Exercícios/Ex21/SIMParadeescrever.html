@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Evento de Teclado</title>
+</head>
+<body>
+
+  <input type="text" id="inputTecla" placeholder="Digite algo">
+  <p>Última tecla pressionada: <span id="teclaPressionada"></span></p>
+
+  <script>
+    const input = document.getElementById('inputTecla');
+    const span = document.getElementById('teclaPressionada');
+
+    input.addEventListener('keydown', function(e) {
+      span.textContent = e.key;
+    });
+  </script>
+
+</body>
+</html>
